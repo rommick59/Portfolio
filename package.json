@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "cd node-vue-prisma/backend && npm run dev & cd ../frontend && npm run dev",
+    "build:frontend": "cd node-vue-prisma/frontend && npm run build",
+    "postinstall": "cd node-vue-prisma/backend && npm install && cd ../frontend && npm install && npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+  ,
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.0.0"
+  }
+}
