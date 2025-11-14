@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 2,
   "buildCommand": "cd node-vue-prisma/frontend && npm install && npm run build",
   "outputDirectory": "node-vue-prisma/frontend/dist",
   "builds": [
