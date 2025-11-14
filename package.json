@@ -6,7 +6,8 @@
     "start": "node index.js",
     "start:dev": "cd node-vue-prisma/backend && npm run dev & cd ../frontend && npm run dev",
     "build:frontend": "cd node-vue-prisma/frontend && npm run build",
-    "postinstall": "cd node-vue-prisma/backend && npm install && cd ../frontend && npm install && npm run build"
+    "vercel-build": "cd node-vue-prisma/frontend && npm install && npm run build",
+    "postinstall": "node -e \"if (process.env.VERCEL) { console.log('Skipping postinstall on Vercel'); process.exit(0); } const { execSync } = require('child_process'); execSync('cd node-vue-prisma/backend && npm install', { stdio: 'inherit' }); execSync('cd node-vue-prisma/frontend && npm install && npm run build', { stdio: 'inherit' });\""
   },
   "engines": {
     "node": ">=18"
