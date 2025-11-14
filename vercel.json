@@ -1,23 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "cd node-vue-prisma/frontend && npm install && npm run build",
-  "outputDirectory": "node-vue-prisma/frontend/dist",
   "builds": [
-    {
-      "src": "node-vue-prisma/frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
+    { "src": "api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "env": {
-    "NODE_ENV": "production"
-  }
+    { "src": "/api/(.*)", "dest": "/api/$1.js" }
+  ]
 }
