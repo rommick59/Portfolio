@@ -7,7 +7,7 @@
     "start:dev": "cd node-vue-prisma/backend && npm run dev & cd ../frontend && npm run dev",
     "build:frontend": "cd node-vue-prisma/frontend && npm run build",
     "build": "npm run vercel-build",
-    "vercel-build": "npm install --prefix ./node-vue-prisma/frontend && npm run build --prefix ./node-vue-prisma/frontend"
+    "vercel-build": "npm install --prefix ./node-vue-prisma/frontend && npx --prefix ./node-vue-prisma/frontend vite build"
   },
   "engines": {
     "node": ">=18"
